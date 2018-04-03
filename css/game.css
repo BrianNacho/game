@@ -49,6 +49,7 @@ body {
   background-color: rgba(0, 0, 0, 0.2);
   padding: 10px 10px 10px 10px;
   border-radius: 5%;
+  cursor: url("../images/mallet.png"), auto;
 }
 
 .wall .dot {
@@ -57,37 +58,49 @@ body {
   background: #ecf0f1;
   border-radius: 50%;
   float: left;
+  cursor: url("../images/mallet.png"), auto;
 }
 
 .active {
-  background: #e74c3c;
-  cursor: pointer;
+  height: 68px;
+  width: 68px;
+  background-image: url("../images/jianyangdrawing.png");
+  border-radius: 50%;
+  float: left;
+  cursor: url("../images/mallet.png"), auto;
 }
 
 .end {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #ecf0f1;
-  z-index: 100;
-  border-radius: 5px;
+  position: relative;
 }
   
 .end .score {
+  position: relative;
+  margin-top: 2vw;
   text-align: center;
   color: #000;
-  font-size: 5px;;
+  font-size: 2vw;;
   line-height: 1.5px;
+}
+
+.end img {
+  position: relative;
+  margin-top: 5vw;
+  align-content: center;
 }
     
 .end button {
+  align-content: center;
   width: auto;
   height: auto;
   font-size: 1.5vw;
   text-transform: uppercase;
   background: #e74c3c;
   border-radius: 5px;
-  position: absolute;
-  margin: auto;
+  position: relative;
   cursor: pointer;
 }
+
+/* .custom {
+  cursor: url("../images/mallet.png"), auto;
+} */
