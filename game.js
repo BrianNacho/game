@@ -5,13 +5,13 @@ $(document).ready(function() {
 
 var points = 0;
 var time = 30;
-// var newAudio = document.createElement("audio");
-// newAudio.setAttribute("src","./Sound/imveryrich.mp3");
 
 function endGame() {
   $(".wall").hide();
   $(".end").show();
 }
+
+var blah = 0;
 
 function countDown() {
   setInterval(function () {
@@ -21,33 +21,50 @@ function countDown() {
     }
     time -= 1;
     $(".time span").html("00:" + time);
+     blah = time;
     }, 1000);
     if (time > 0) {
       $(".time span").html("00:" + time);
-    } else {
-      return;
-    }
+    } 
 };
 
 function randomDot() {
   setInterval(function() {
-    var index = Math.floor(Math.random() * $(".wall div").length);   
+    if (blah === 0) {
+    return;
+    }
+    var index = Math.floor(Math.random() * $(".wall div").length);
     $(".wall div").eq(index).removeClass("dot").addClass("active");
-    // var newAudio = document.createElement("audio");
-    // newAudio.setAttribute("src","./Sound/imveryrich.mp3");
-    // newAudio.play();
-    // setTimeout(function() {
-    //   var newAudio = document.createElement("audio");
-    //   newAudio.setAttribute("src", "./Sound/imveryrich.mp3");
-    //   newAudio.play();
-    // },1000);
     setTimeout(function() {
       $(".wall div").eq(index).removeClass("active").addClass("dot");
-      // newAudio.pause();
-      // newAudio.currentTime = 0;
-    }, 2000);
+    }, 1500);
+    var sounds = ["./Sound/ieatfish.mp3",
+                  "./Sound/imveryrich.mp3",
+                  "./Sound/richardyoureugly.mp3",
+                  "./Sound/this-pied-piper.wav",
+                  "./Sound/thisisyourmom.mp3"];
+    var newAudio = document.createElement("audio");
+    var randomSound = sounds[Math.floor(Math.random() * sounds.length)];
+    newAudio.setAttribute("src", randomSound);
+    newAudio.play();
   }, 2000);
 };
+
+$(".wall .active").click(function() {
+  $(this).removeClass("active").addClass("dot");
+  var yells = ["./Sound/motherfuck.wav",
+               "./Sound/notnowjianyang.mp3",
+              //  "./Sound/shit-fight.wav",
+              //  "./Sound/slowboattochina.mp3"
+              ];
+  var audio = document.createElement("audio");
+  var randomYell = yells[Math.floor(Math.random() * yells.length)];
+  audio.setAttribute("src", randomYell );
+  audio.play();
+  points += 1;
+  $(".points span").html(points);
+  $(".score span").html(points);
+});
 
 $(".start button").click(function() {
   countDown();
@@ -55,13 +72,6 @@ $(".start button").click(function() {
   $(this).hide();
 });
 
-$(".wall .active").click(function() {
-  $(this).removeClass("active").addClass("dot");
-  var audio = document.createElement("audio");
-  audio.setAttribute("src", "./Sound/motherfuck.wav");
-  audio.play();
-  points += 1;
-  $(".points span").html(points);
-  $(".score span").html(points);
+$(".end button").click(function() {
+  document.location.href = "";
 });
-

@@ -59,6 +59,7 @@ body {
   border-radius: 50%;
   float: left;
   cursor: url("../images/mallet.png"), auto;
+  pointer-events: none;
 }
 
 .active {
