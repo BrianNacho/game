@@ -37,8 +37,31 @@ function randomDot() {
     $(".wall div").eq(index).removeClass("dot").addClass("active");
     setTimeout(function() {
       $(".wall div").eq(index).removeClass("active").addClass("dot");
-    }, 1500);
-    var sounds = ["./Sound/ieatfish.mp3",
+    }, 2000);
+    // var sounds = ["./Sound/ieatfish.mp3",
+    //               "./Sound/imveryrich.mp3",
+    //               "./Sound/richardyoureugly.mp3",
+    //               "./Sound/this-pied-piper.wav",
+    //               "./Sound/thisisyourmom.mp3"];
+    // var newAudio = document.createElement("audio");
+    // var randomSound = sounds[Math.floor(Math.random() * sounds.length)];
+    // newAudio.setAttribute("src", randomSound);
+    // newAudio.play();
+  }, 2000);
+};
+
+$(".wall .active").click(function() {
+  $(this).removeClass("active").addClass("dot");
+  // var yells = ["./Sound/motherfuck.wav",
+  //              "./Sound/notnowjianyang.mp3",
+  //             //  "./Sound/shit-fight.wav",
+  //             //  "./Sound/slowboattochina.mp3"
+  //             ];
+  // var audio = document.createElement("audio");
+  // var randomYell = yells[Math.floor(Math.random() * yells.length)];
+  // audio.setAttribute("src", randomYell );
+  // audio.play();
+  var sounds = ["./Sound/ieatfish.mp3",
                   "./Sound/imveryrich.mp3",
                   "./Sound/richardyoureugly.mp3",
                   "./Sound/this-pied-piper.wav",
@@ -47,20 +70,6 @@ function randomDot() {
     var randomSound = sounds[Math.floor(Math.random() * sounds.length)];
     newAudio.setAttribute("src", randomSound);
     newAudio.play();
-  }, 2000);
-};
-
-$(".wall .active").click(function() {
-  $(this).removeClass("active").addClass("dot");
-  var yells = ["./Sound/motherfuck.wav",
-               "./Sound/notnowjianyang.mp3",
-              //  "./Sound/shit-fight.wav",
-              //  "./Sound/slowboattochina.mp3"
-              ];
-  var audio = document.createElement("audio");
-  var randomYell = yells[Math.floor(Math.random() * yells.length)];
-  audio.setAttribute("src", randomYell );
-  audio.play();
   points += 1;
   $(".points span").html(points);
   $(".score span").html(points);

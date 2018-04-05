@@ -1,5 +1,5 @@
 body {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Press Start 2P", cursive;
   color: #2a2b28;
   background-image: url("../images/background.png");
   background-size: cover;
@@ -8,15 +8,38 @@ body {
 
 .game-title {
   color: #e74c3c;
-  padding-left: 15vw;
+  /* padding-left: 15vw; */
+}
+
+.game-title img {
+  display: flex;
+  position: relative;
+  margin-right: 5vw;
+  margin-left: auto;
+  margin-top: 2vw;
+  /* float: right; */
+  width: 15vw;
+  height: auto;
+}
+
+.game-title h1 {
+  display: flex;
+  /* position: relative; */
+  /* float: left; */
+  font-size: 1.58vw;
+  margin-top: 2.5vw;
+  margin-bottom: 2vw;
+  margin-right: 5vw;
 }
 
 .start {
   height: auto;
   width: auto;
   border-radius: 5px;
-  position: relative;
-  float: left;
+  display: flex;
+  /* position: relative; */
+  margin-right: 5vw;
+  margin-bottom: 1vw;
 }
 
 .start button {
@@ -25,34 +48,82 @@ body {
   background: #e74c3c;
   border-radius: 10%;
   cursor: pointer;
+  display: flex;
 }
 
 .info {
-  position: absolute;
-  float: left;
+  position: relative;
   border: 1px solid black;
   background: #ecf0f1;
   border-radius: 10%;
   height: auto;
-  width: auto;
-  padding: 20px;
+  width: 15vw;
+  padding: 1vw;
   color: #000;
+  font-size: 1vw;
+  font-weight: bolder;
+  text-align: center;
+  line-height: 3vw;
+}
+
+.info .level {
+  color: green;
+  font-size: 1.3vw;
+}
+
+.info .time span {
+  font-size: 1.3vw;
+  color: red;
+}
+
+.info .points span {
+  font-size: 1.3vw;
 }
 
 .wall {
   width: 700px;
   height: 700px;
-  display: relative;
+  display: absolute;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 0;
+  margin-top: 2vw;
   background-color: rgba(0, 0, 0, 0.2);
   padding: 10px 10px 10px 10px;
   border-radius: 5%;
   cursor: url("../images/mallet.png"), auto;
 }
 
-.wall .dot {
+#level0 .wall .dot {
+  height: 170px;
+  width: 170px;
+  background: #ecf0f1;
+  border-radius: 50%;
+  float: left;
+  cursor: url("../images/mallet.png"), auto;
+  pointer-events: none;
+}
+
+#level1 .wall .dot {
+  height: 113px;
+  width: 113px;
+  background: #ecf0f1;
+  border-radius: 50%;
+  float: left;
+  cursor: url("../images/mallet.png"), auto;
+  pointer-events: none;
+}
+
+#level2 .wall .dot {
+  height: 85px;
+  width: 85px;;
+  background: #ecf0f1;
+  border-radius: 50%;
+  float: left;
+  cursor: url("../images/mallet.png"), auto;
+  pointer-events: none;
+}
+
+#level3 .wall .dot {
   height: 68px;
   width: 68px;;
   background: #ecf0f1;
@@ -62,7 +133,34 @@ body {
   pointer-events: none;
 }
 
-.active {
+#level0 .active {
+  height: 170px;
+  width: 170px;
+  background-image: url("../images/jianyang.png");
+  border-radius: 50%;
+  float: left;
+  cursor: url("../images/mallet.png"), auto;
+}
+
+#level1 .active {
+  height: 113px;
+  width: 113px;
+  background-image: url("../images/jiangyangphoto copy.jpg");
+  border-radius: 50%;
+  float: left;
+  cursor: url("../images/mallet.png"), auto;
+}
+
+#level2 .active {
+  height: 85px;
+  width: 85px;
+  background-image: url("../images/jiangyangface copy.jpg");
+  border-radius: 50%;
+  float: left;
+  cursor: url("../images/mallet.png"), auto;
+}
+
+#level3 .active {
   height: 68px;
   width: 68px;
   background-image: url("../images/jianyangdrawing.png");
@@ -76,32 +174,34 @@ body {
 }
   
 .end .score {
-  position: relative;
   margin-top: 2vw;
   text-align: center;
   color: #000;
   font-size: 2vw;;
-  line-height: 1.5px;
 }
 
 .end img {
   position: relative;
-  margin-top: 5vw;
-  align-content: center;
+  margin-top: 2vw;
+  margin-bottom: 2vw;  
+}
+
+.end a {
+  text-align: center;
+  text-decoration: none;
+  color: #000;
 }
     
 .end button {
-  align-content: center;
   width: auto;
   height: auto;
   font-size: 1.5vw;
   text-transform: uppercase;
   background: #e74c3c;
   border-radius: 5px;
+  display: flex;
   position: relative;
   cursor: pointer;
+  margin-right: auto;
+  margin-left: auto;
 }
-
-/* .custom {
-  cursor: url("../images/mallet.png"), auto;
-} */
